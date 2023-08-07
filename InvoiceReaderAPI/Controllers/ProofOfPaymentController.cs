@@ -14,10 +14,10 @@ namespace InvoiceReaderAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpPost]
         public async Task<ActionResult<RequestOutput>> Post([FromForm] RequestInput requestInput)
         {
-            _logger.Log(LogLevel.Information, "TESTING");
+            _logger.Log(LogLevel.Information, Environment.GetEnvironmentVariable("TEST"));
 
             // validate image
             // deserializes request 
